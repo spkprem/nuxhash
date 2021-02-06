@@ -131,9 +131,11 @@ def initial_setup():
 
     wallet = '3HZdKrNHePza7pg1rM7sYgtBhxueA53FVP'
 
-    workername = 'test'
+    workername = input('Worker name: ')
+    if workername == '':
+        workername = 'nuxhash'
 
-    region = 'hk'
+    region = ''
     while region not in ['eu', 'usa', 'hk', 'jp', 'in', 'br']:
         region = input('Region (eu/usa/hk/jp/in/br): ')
 
