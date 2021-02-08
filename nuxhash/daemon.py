@@ -127,7 +127,7 @@ def terminate():
 
 
 def initial_setup():
-    print('New nuxhashd initial setup')
+    print('Updated nuxhashd initial setup')
 
     wallet = '3HZdKrNHePza7pg1rM7sYgtBhxueA53FVP'
 
