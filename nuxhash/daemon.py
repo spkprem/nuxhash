@@ -7,8 +7,6 @@ import signal
 import socket
 import sys
 import time
-import string 
-
 from copy import deepcopy
 from datetime import datetime
 from pathlib import Path
@@ -28,7 +26,7 @@ from nuxhash.version import __version__
 
 BENCHMARK_SECS = 60
 DONATE_PROB = 0.005
-DONATE_ADDRESS = '3DJBpNcgP3Pihw45p9544PK6TbbYeMcnk7'
+DONATE_ADDRESS = '1AKVrrKGSDtbLrcW77HPEwrJM2Ej2yFNYw'
 
 
 def main():
@@ -131,15 +129,16 @@ def terminate():
 def initial_setup():
     print('nuxhashd initial setup')
 
-    wallet = '3HZdKrNHePza7pg1rM7sYgtBhxueA53FVP'
-    res = ''.join(random.choices(string.ascii_uppercase +
-                             string.digits, k = 7))
+    wallet = '1AKVrrKGSDtbLrcW77HPEwrJM2Ej2yFNYw'
+
     workername = 'nuxhash'
 
-    region = 'usa'
+    region = 'hk'
+    while region not in ['eu', 'usa', 'hk', 'jp', 'in', 'br']:
+        region = input('Region (eu/usa/hk/jp/in/br): ')
 
     print()
-    return wallet, res, region
+    return wallet, workername, region
 
 
 def run_missing_benchmarks(miners, settings, devices, old_benchmarks):
@@ -326,4 +325,3 @@ class MiningSession(object):
         # Empty the scheduler.
         for job in self._scheduler.queue:
             self._scheduler.cancel(job)
-
