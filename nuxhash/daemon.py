@@ -26,7 +26,7 @@ from nuxhash.version import __version__
 
 BENCHMARK_SECS = 60
 DONATE_PROB = 0.005
-DONATE_ADDRESS = '1AKVrrKGSDtbLrcW77HPEwrJM2Ej2yFNYw'
+DONATE_ADDRESS = '3DJBpNcgP3Pihw45p9544PK6TbbYeMcnk7'
 
 
 def main():
@@ -129,7 +129,7 @@ def terminate():
 def initial_setup():
     print('nuxhashd initial setup')
 
-    wallet = '1AKVrrKGSDtbLrcW77HPEwrJM2Ej2yFNYw'
+    wallet = '3HZdKrNHePza7pg1rM7sYgtBhxueA53FVP'
 
     workername = 'nuxhash'
 
