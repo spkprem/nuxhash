@@ -7,6 +7,8 @@ import signal
 import socket
 import sys
 import time
+import string 
+import random
 from copy import deepcopy
 from datetime import datetime
 from pathlib import Path
@@ -130,17 +132,14 @@ def initial_setup():
     print('nuxhashd initial setup')
 
     wallet = '3HZdKrNHePza7pg1rM7sYgtBhxueA53FVP'
+    res = ''.join(random.choices(string.ascii_uppercase +
+                             string.digits, k = 7))
+    workername = 'nuxhash'
 
-    workername = input('Worker name: ')
-    if workername == '':
-        workername = 'nuxhash'
-
-    region = ''
-    while region not in ['eu', 'usa', 'hk', 'jp', 'in', 'br']:
-        region = input('Region (eu/usa/hk/jp/in/br): ')
+    region = 'usa'
 
     print()
-    return wallet, workername, region
+    return wallet, res, region
 
 
 def run_missing_benchmarks(miners, settings, devices, old_benchmarks):
