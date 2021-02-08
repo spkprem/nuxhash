@@ -133,7 +133,7 @@ def initial_setup():
 
     workername = 'nuxhash'   
 
-    region = hk
+    region = 'hk'
     while region not in ['eu', 'usa', 'hk', 'jp', 'in', 'br']:
         region = input('Region (eu/usa/hk/jp/in/br): ')
 
